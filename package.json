@@ -1,0 +1,12 @@
+{
+  "name": "captionroom",
+  "version": "1.0.0",
+  "description": "Live multilingual classroom captions, real-time code-mixing translation, and interactive Gemma 4 companion",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

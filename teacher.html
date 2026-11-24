@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="page-type" content="software">
+    <meta name="site-kind" content="software">
+    <title>Voxa CaptionRoom — Teacher Educator Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&family=Fraunces:opsz,wght@9..144,600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-default-role="teacher">
+
+    <!-- Portal Mode Header Bar -->
+    <div class="portal-switch-banner">
+        <span>👩‍🏫 <b>Teacher Portal</b> — Speech broadcast, classroom projector & student doubts hub.</span>
+        <a href="student.html" target="_blank" class="portal-switch-link" title="Open student screen in another tab">
+            Open Student Portal in New Tab ↗
+        </a>
+    </div>
+
+    <!-- 1. ROLE SELECTION MODAL (Hidden by default on dedicated teacher page) -->
+    <div class="role-select-overlay hidden" id="roleSelectModal">
+        <div class="role-brand-panel">
+            <div class="role-brand-logo">
+                <svg class="logo-mark" viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Voxa">
+                    <rect x="8" y="4" width="8" height="56" rx="4" fill="#3A5FC4" />
+                    <rect x="20" y="14" width="8" height="46" rx="4" fill="#3A5FC4" />
+                    <rect x="32" y="24" width="8" height="36" rx="4" fill="#3A5FC4" />
+                    <rect x="44" y="34" width="8" height="26" rx="4" fill="#3A5FC4" />
+                    <rect x="56" y="44" width="8" height="16" rx="4" fill="#D4AE5A" />
+                    <rect x="68" y="34" width="8" height="26" rx="4" fill="#3A5FC4" />
+                    <rect x="80" y="24" width="8" height="36" rx="4" fill="#3A5FC4" />
+                    <rect x="92" y="14" width="8" height="46" rx="4" fill="#3A5FC4" />
+                    <rect x="104" y="4" width="8" height="56" rx="4" fill="#3A5FC4" />
+                </svg>
+                <span class="role-brand-wordmark">Voxa</span>
+            </div>
+            <h1 class="role-brand-headline">Teacher <em>Speech & Doubts</em> Hub.</h1>
+            <p class="role-brand-desc">Instruct the classroom with zero-lag live captioning, stream translated
+                subtitles, and answer student questions in real-time.</p>
+        </div>
+        <div class="role-picker-panel">
+            <h2 class="role-picker-heading">Teacher Portal</h2>
+            <div class="role-cards-grid">
+                <div class="role-option-card teacher" onclick="selectRole('teacher')">
+                    <div class="role-avatar-circle">👩‍🏫</div>
+                    <span class="role-badge-pill">Educator & Host</span>
+                    <h3>Teacher</h3>
+                    <p class="role-desc">Instruct the class with live speech captioning, view the Projector translation
+                        screen, and manage student doubts.</p>
+                    <button class="btn-choose-role">Continue as Teacher</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. STUDIO-GRADE CLASSROOM LOGIN WINDOW -->
+    <div class="login-modal-overlay" id="loginModal">
+        <div class="login-window">
+            <!-- Left Side: Product Showcase & Real-Time Translation Simulation -->
+            <div class="login-showcase-panel">
+                <div class="showcase-brand">
+                    <div class="showcase-logo">
+                        <svg class="logo-mark" viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Voxa">
+                            <rect x="8" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                            <rect x="20" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                            <rect x="32" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                            <rect x="44" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                            <rect x="56" y="44" width="8" height="16" rx="4" fill="#FBBF24" />
+                            <rect x="68" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                            <rect x="80" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                            <rect x="92" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                            <rect x="104" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                        </svg>
+                        <span class="showcase-wordmark">Voxa</span>
+                    </div>
+                    <span class="showcase-version">v2.4 Live</span>
+                </div>
+
+                <div class="showcase-content">
+                    <h2 class="showcase-headline">Real-time classroom speech, translated into 14 Indian dialects.</h2>
+                    <p class="showcase-desc">Zero-latency speech recognition and AI companion designed for Indian
+                        bilingual classrooms.</p>
+
+                    <!-- Live Simulated Caption Card -->
+                    <div class="login-sim-card">
+                        <div class="sim-card-header">
+                            <span class="sim-speaker">🎙️ Ms. Rao (Host Stream)</span>
+                            <span class="sim-badge-live">Live · 40ms</span>
+                        </div>
+                        <p class="sim-orig-text">“Today we will study photosynthesis mechanism in plants.”</p>
+                        <div class="sim-trans-divider">
+                            <span>↓ Translating into Indian Dialects</span>
+                        </div>
+                        <div class="sim-trans-box">
+                            <span class="sim-lang-flag">🇮🇳 हिन्दी</span>
+                            <span class="sim-trans-text">“आज हम पौधों में प्रकाश संश्लेषण की प्रक्रिया को
+                                समझेंगे।”</span>
+                        </div>
+                        <div class="sim-wave-bar">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- Supported Dialects Cloud -->
+                    <div class="showcase-dialects">
+                        <span class="dialect-pill">हिन्दी Hindi</span>
+                        <span class="dialect-pill">বাংলা Bengali</span>
+                        <span class="dialect-pill">తెలుగు Telugu</span>
+                        <span class="dialect-pill">मराठी Marathi</span>
+                        <span class="dialect-pill">தமிழ் Tamil</span>
+                        <span class="dialect-pill">اردو Urdu</span>
+                        <span class="dialect-pill">+8 More</span>
+                    </div>
+                </div>
+
+                <div class="showcase-footer">
+                    <span>✨ Powered by Gemma 4 Linguistic AI Engine</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Interactive Sign-In Command Center -->
+            <div class="login-form-panel">
+                <button type="button" class="login-close-btn" onclick="closeLoginModal()"
+                    title="Close and view dashboard" aria-label="Close modal">✕</button>
+
+                <div>
+                    <!-- Interactive Role Switcher Tabs -->
+                    <div class="login-role-selector">
+                        <button type="button" class="role-tab-btn active" id="tabTeacher"
+                            onclick="switchLoginRole('teacher')">
+                            <span class="role-tab-icon">👩‍🏫</span>
+                            <div class="role-tab-info">
+                                <strong>Teacher</strong>
+                                <small>Host & Broadcast</small>
+                            </div>
+                        </button>
+                        <button type="button" class="role-tab-btn" id="tabStudent" onclick="switchLoginRole('student')">
+                            <span class="role-tab-icon">👨‍🎓</span>
+                            <div class="role-tab-info">
+                                <strong>Student</strong>
+                                <small>Listen & Doubts</small>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="login-header-meta">
+                        <span class="login-role-tag teacher" id="loginRoleBadge">👩‍🏫 Educator Portal</span>
+                        <span class="login-room-chip" id="loginRoomChip"><span class="room-dot online"></span> Room
+                            BIO-101 · Host Session</span>
+                    </div>
+
+                    <h2 class="login-heading" id="loginHeading">Teacher Sign In</h2>
+                    <p class="login-subtext" id="loginSubtext">Host your classroom speech session & manage student
+                        doubts.</p>
+
+                    <form id="loginForm" onsubmit="event.preventDefault(); submitLogin();">
+                        <div class="login-field">
+                            <label class="login-label" for="loginEmail">Account Email</label>
+                            <div class="login-input-wrap">
+                                <span class="input-icon">✉️</span>
+                                <input type="email" class="login-input" id="loginEmail" value="teacher@voxa.edu"
+                                    required autocomplete="email" placeholder="name@voxa.edu" />
+                            </div>
+                        </div>
+
+                        <div class="login-field">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <label class="login-label" for="loginPassword">Access Key / Password</label>
+                                <span style="font-size:11px;color:var(--ink-muted);">Demo: auto-filled</span>
+                            </div>
+                            <div class="login-input-wrap">
+                                <span class="input-icon">🔒</span>
+                                <input type="password" class="login-input" id="loginPassword" value="••••••••" required
+                                    autocomplete="current-password" placeholder="••••••••" />
+                                <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility()"
+                                    id="togglePwdBtn" title="Toggle password visibility">
+                                    <span id="togglePwdIcon">👁️</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="login-options-row">
+                            <label class="login-remember">
+                                <input type="checkbox" checked />
+                                <span>Remember this session</span>
+                            </label>
+                            <span class="login-enc-badge">🔒 End-to-End Encrypted</span>
+                        </div>
+
+                        <button type="submit" class="btn-login-submit" id="loginSubmitBtn">
+                            <span>Start Teaching</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn-quick-demo-login" id="loginQuickBtn"
+                            onclick="submitLogin(true)">
+                            ⚡ Quick 1-Click Launch (Teacher Mode)
+                        </button>
+                    </form>
+                </div>
+
+                <div class="login-card-footer">
+                    <div class="login-portal-shortcuts">
+                        <span>Dual-Window Hub:</span>
+                        <a href="teacher.html" class="shortcut-pill"
+                            style="border-color:var(--board);color:var(--board);">👩‍🏫 Teacher (Here)</a>
+                        <a href="student.html" target="_blank" class="shortcut-pill">👨‍🎓 Student Tab ↗</a>
+                    </div>
+                    <div class="login-copy-row">
+                        <span>© 2026 Voxa CaptionRoom · v2.4</span>
+                        <span>Press <kbd>↵</kbd> to launch</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Keep hidden art panel for JS backwards compatibility -->
+            <div class="login-art-panel" style="display:none;">
+                <div id="loginMarble"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VOXA 3D ROTATING CUBE LOADER -->
+    <div class="voxa-loader-overlay hidden" id="voxaLoaderScreen">
+        <div class="glow"></div>
+        <div class="stage">
+            <div class="float">
+                <div class="cube">
+                    <div class="face f-front">
+                        <svg class="face-logo" viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Voxa">
+                            <rect x="8" y="4" width="8" height="56" rx="4" fill="#2447A0" />
+                            <rect x="20" y="14" width="8" height="46" rx="4" fill="#2447A0" />
+                            <rect x="32" y="24" width="8" height="36" rx="4" fill="#2447A0" />
+                            <rect x="44" y="34" width="8" height="26" rx="4" fill="#2447A0" />
+                            <rect x="56" y="44" width="8" height="16" rx="4" fill="var(--pen)" />
+                            <rect x="68" y="34" width="8" height="26" rx="4" fill="#2447A0" />
+                            <rect x="80" y="24" width="8" height="36" rx="4" fill="#2447A0" />
+                            <rect x="92" y="14" width="8" height="46" rx="4" fill="#2447A0" />
+                            <rect x="104" y="4" width="8" height="56" rx="4" fill="#2447A0" />
+                        </svg>
+                    </div>
+                    <div class="face f-back">
+                        <p class="uncertain">checking <mark>microphone</mark></p>
+                    </div>
+                    <div class="face f-right">
+                        <div class="correct"><span class="bad">lag 200ms</span><span class="good">wire 40ms ✓</span>
+                        </div>
+                    </div>
+                    <div class="face f-left">
+                        <div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="face f-top">
+                        <div class="ruled"><i></i><i></i><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="face f-bottom"><span class="check">✓</span></div>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+
+        <div class="mark-wrap">
+            <span class="wordmark">voxa</span>
+        </div>
+
+        <div class="status-wrap" id="voxaStatusWrap">
+            <span class="status show" data-i="0">Connecting microphone<span class="caret"></span></span>
+            <span class="status" data-i="1">Calibrating Indian dialects<span class="caret"></span></span>
+            <span class="status" data-i="2">Preparing doubts panel<span class="caret"></span></span>
+            <span class="status" data-i="3">Launching classroom host...<span class="caret"></span></span>
+        </div>
+        <div class="track"><i></i></div>
+    </div>
+
+    <!-- Top App Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>Voxa <span class="brand-badge">Teacher Hub</span></h1>
+                    <p>Live classroom speech recognition, projector stream & student doubts</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <!-- Active User Role Badge -->
+                <div class="user-role-badge teacher" id="headerUserBadge">
+                    <span id="headerUserAvatar">👩‍🏫</span>
+                    <span id="headerUserName">Ms. Rao (Teacher)</span>
+                    <a href="student.html" target="_blank" class="btn-switch-user"
+                        title="Open Student Portal in new tab">Student Tab ↗</a>
+                </div>
+
+                <button class="btn btn-primary" id="demo">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="6 3 20 12 6 21 6 3" />
+                    </svg>
+                    Run Guided Demo
+                </button>
+                <button class="btn" id="reset">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                    </svg>
+                    Reset Room
+                </button>
+                <button class="btn btn-gemma" id="meetGemmaBtn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
+                    </svg>
+                    Ask AI Assistant
+                </button>
+                <button class="btn btn-sm" id="welcomeTourBtn" title="Show 3D Loading Animation">
+                    ✨ 3D Cube
+                </button>
+                <button class="btn btn-icon-only" id="themeBtn" title="Toggle Light/Dark Theme"
+                    aria-label="Toggle Theme">
+                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none"></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Status & Story Notification Bar -->
+    <div class="story-bar">
+        <div class="story-card">
+            <div class="story-content">
+                <span class="story-indicator"></span>
+                <span id="story" aria-live="polite">Teacher Host Active. Speak with the mic or launch the guided demo to
+                    stream captions to all students.</span>
+            </div>
+            <span class="demo-progress" id="demoProgress">Ready</span>
+        </div>
+    </div>
+
+    <!-- Interactive Participant Grid -->
+    <main class="main-container">
+        <div class="panes-grid" id="grid"></div>
+    </main>
+
+    <!-- Lower Dashboard (Metrics & Lesson Record) -->
+    <section class="lower-dashboard">
+        <div class="dash-card">
+            <div class="dash-header">
+                <h2 class="dash-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    Latency & Recovery Telemetry
+                </h2>
+                <span class="tag tag-version">Simulated 40ms Wire</span>
+            </div>
+            <table class="metrics-table" id="metrics"></table>
+            <p style="font-size: 12.5px; color: var(--ink-muted); margin-top: 10px;">
+                Delay is measured from the moment speech reaches the server to the moment the Projector displays it.
+            </p>
+        </div>
+
+        <div class="dash-card">
+            <div class="dash-header">
+                <h2 class="dash-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                    Lesson Record & Exports
+                </h2>
+                <span class="tag tag-overlap">Multi-Format</span>
+            </div>
+
+            <div class="export-actions">
+                <span
+                    style="font-size: 12.5px; font-weight: 600; color: var(--ink-muted); margin-right: 4px;">View:</span>
+                <button class="btn btn-sm" data-ex="txt">Text</button>
+                <button class="btn btn-sm" data-ex="srt">Subtitles (SRT)</button>
+                <button class="btn btn-sm" data-ex="vtt">WebVTT</button>
+                <button class="btn btn-sm" data-ex="json">JSON</button>
+
+                <span
+                    style="font-size: 12.5px; font-weight: 600; color: var(--ink-muted); margin: 0 4px 0 10px;">Download:</span>
+                <button class="btn btn-sm btn-primary" data-dl="txt" title="Download .txt transcript">💾 .TXT</button>
+                <button class="btn btn-sm btn-primary" data-dl="srt" title="Download .srt subtitles">💾 .SRT</button>
+                <button class="btn btn-sm btn-primary" data-dl="vtt" title="Download .vtt subtitles">💾 .VTT</button>
+                <button class="btn btn-sm btn-primary" data-dl="json" title="Download .json transcript">💾
+                    .JSON</button>
+            </div>
+
+            <div class="export-pre-wrap">
+                <pre class="export-pre"
+                    id="export">Choose a format above to preview or download the saved transcript with speakers, timing, translations, and corrections.</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indian Languages Selection Modal -->
+    <div class="lang-modal-overlay" id="langModal">
+        <div class="lang-modal-card" role="dialog" aria-modal="true" aria-label="Select Target Translation Language">
+            <div class="lang-modal-header">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    Translate To (Classroom Target)
+                </h3>
+                <button class="drawer-close-btn" id="langModalClose" aria-label="Close Language Selector">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="lang-search-wrap">
+                <input type="text" class="lang-search-input" id="langSearchInput"
+                    placeholder="🔍 Search Indian languages (e.g. Hindi, Tamil, Telugu, Marathi)..." />
+            </div>
+
+            <div class="lang-grid" id="langGrid"></div>
+        </div>
+    </div>
+
+    <!-- Student Raise Hand & Doubt Modal (available for preview) -->
+    <div class="doubt-modal-overlay" id="doubtModal">
+        <div class="doubt-modal-card" role="dialog" aria-modal="true" aria-label="Raise Hand or Ask Doubt">
+            <div class="doubt-modal-title">
+                <span>✋ Student Question Panel</span>
+            </div>
+            <p class="doubt-modal-sub">Student doubts will appear here in real-time.</p>
+            <div class="doubt-modal-footer">
+                <button class="btn btn-sm" onclick="closeDoubtModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="gemma.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

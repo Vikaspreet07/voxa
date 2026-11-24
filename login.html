@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="page-type" content="software">
+    <meta name="site-kind" content="software">
+    <title>Sign In — Voxa CaptionRoom Bilingual Classroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.standalone-login-page {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 50% 20%, #15223e 0%, #0a0f1d 75%);
+            padding: 24px 16px;
+            box-sizing: border-box;
+            font-family: var(--font-body, 'DM Sans', sans-serif);
+        }
+        .standalone-login-container {
+            width: 100%;
+            max-width: 980px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .standalone-top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4px;
+        }
+        .standalone-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .standalone-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .standalone-link-btn {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .standalone-link-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.25);
+            color: #FFFFFF;
+        }
+        .standalone-login-container .login-window {
+            box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
+        }
+        .standalone-login-container .login-close-btn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="standalone-login-page">
+
+    <div class="standalone-login-container">
+        <!-- Top Navigation -->
+        <header class="standalone-top-nav">
+            <a href="index.html" class="standalone-brand">
+                <svg style="width:34px;height:auto;" viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                    <rect x="20" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                    <rect x="32" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                    <rect x="44" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                    <rect x="56" y="44" width="8" height="16" rx="4" fill="#FBBF24" />
+                    <rect x="68" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                    <rect x="80" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                    <rect x="92" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                    <rect x="104" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                </svg>
+                <span>Voxa CaptionRoom</span>
+            </a>
+            <div class="standalone-links">
+                <a href="teacher.html" class="standalone-link-btn">👩‍🏫 Teacher Portal ↗</a>
+                <a href="student.html" class="standalone-link-btn">👨‍🎓 Student Desk ↗</a>
+                <a href="index.html" class="standalone-link-btn">Combined View ↗</a>
+            </div>
+        </header>
+
+        <!-- Studio-Grade Split Login Card -->
+        <div class="login-window">
+            <!-- Left Side: Product Showcase & Real-Time Translation Simulation -->
+            <div class="login-showcase-panel">
+                <div class="showcase-brand">
+                    <div class="showcase-logo">
+                        <svg class="logo-mark" viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Voxa">
+                            <rect x="8" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                            <rect x="20" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                            <rect x="32" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                            <rect x="44" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                            <rect x="56" y="44" width="8" height="16" rx="4" fill="#FBBF24" />
+                            <rect x="68" y="34" width="8" height="26" rx="4" fill="#60A5FA" />
+                            <rect x="80" y="24" width="8" height="36" rx="4" fill="#60A5FA" />
+                            <rect x="92" y="14" width="8" height="46" rx="4" fill="#60A5FA" />
+                            <rect x="104" y="4" width="8" height="56" rx="4" fill="#60A5FA" />
+                        </svg>
+                        <span class="showcase-wordmark">Voxa</span>
+                    </div>
+                    <span class="showcase-version">v2.4 Live</span>
+                </div>
+
+                <div class="showcase-content">
+                    <h2 class="showcase-headline">Real-time classroom speech, translated into 14 Indian dialects.</h2>
+                    <p class="showcase-desc">Zero-latency speech recognition and AI companion designed for Indian bilingual classrooms.</p>
+
+                    <!-- Live Simulated Caption Card -->
+                    <div class="login-sim-card">
+                        <div class="sim-card-header">
+                            <span class="sim-speaker">🎙️ Ms. Rao (Host Stream)</span>
+                            <span class="sim-badge-live">Live · 40ms</span>
+                        </div>
+                        <p class="sim-orig-text">“Today we will study photosynthesis mechanism in plants.”</p>
+                        <div class="sim-trans-divider">
+                            <span>↓ Translating into Indian Dialects</span>
+                        </div>
+                        <div class="sim-trans-box">
+                            <span class="sim-lang-flag">🇮🇳 हिन्दी</span>
+                            <span class="sim-trans-text">“आज हम पौधों में प्रकाश संश्लेषण की प्रक्रिया को समझेंगे।”</span>
+                        </div>
+                        <div class="sim-wave-bar">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- Supported Dialects Cloud -->
+                    <div class="showcase-dialects">
+                        <span class="dialect-pill">हिन्दी Hindi</span>
+                        <span class="dialect-pill">বাংলা Bengali</span>
+                        <span class="dialect-pill">తెలుగు Telugu</span>
+                        <span class="dialect-pill">मराठी Marathi</span>
+                        <span class="dialect-pill">தமிழ் Tamil</span>
+                        <span class="dialect-pill">اردو Urdu</span>
+                        <span class="dialect-pill">+8 More</span>
+                    </div>
+                </div>
+
+                <div class="showcase-footer">
+                    <span>✨ Powered by Gemma 4 Linguistic AI Engine</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Interactive Sign-In Command Center -->
+            <div class="login-form-panel">
+                <div>
+                    <!-- Interactive Role Switcher Tabs -->
+                    <div class="login-role-selector">
+                        <button type="button" class="role-tab-btn active" id="tabTeacher" onclick="handleRoleSwitch('teacher')">
+                            <span class="role-tab-icon">👩‍🏫</span>
+                            <div class="role-tab-info">
+                                <strong>Teacher</strong>
+                                <small>Host & Broadcast</small>
+                            </div>
+                        </button>
+                        <button type="button" class="role-tab-btn" id="tabStudent" onclick="handleRoleSwitch('student')">
+                            <span class="role-tab-icon">👨‍🎓</span>
+                            <div class="role-tab-info">
+                                <strong>Student</strong>
+                                <small>Listen & Doubts</small>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="login-header-meta">
+                        <span class="login-role-tag teacher" id="loginRoleBadge">👩‍🏫 Educator Portal</span>
+                        <span class="login-room-chip" id="loginRoomChip"><span class="room-dot online"></span> Room BIO-101 · Host Session</span>
+                    </div>
+
+                    <h2 class="login-heading" id="loginHeading">Teacher Sign In</h2>
+                    <p class="login-subtext" id="loginSubtext">Host your classroom speech session & manage student doubts.</p>
+
+                    <form id="standaloneLoginForm" onsubmit="event.preventDefault(); handleStandaloneSubmit();">
+                        <div class="login-field">
+                            <label class="login-label" for="loginEmail">Account Email</label>
+                            <div class="login-input-wrap">
+                                <span class="input-icon">✉️</span>
+                                <input type="email" class="login-input" id="loginEmail" value="teacher@voxa.edu" required autocomplete="email" placeholder="name@voxa.edu" />
+                            </div>
+                        </div>
+
+                        <div class="login-field">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <label class="login-label" for="loginPassword">Access Key / Password</label>
+                                <span style="font-size:11px;color:var(--ink-muted);">Demo: auto-filled</span>
+                            </div>
+                            <div class="login-input-wrap">
+                                <span class="input-icon">🔒</span>
+                                <input type="password" class="login-input" id="loginPassword" value="••••••••" required autocomplete="current-password" placeholder="••••••••" />
+                                <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility()" id="togglePwdBtn" title="Toggle password visibility">
+                                    <span id="togglePwdIcon">👁️</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="login-options-row">
+                            <label class="login-remember">
+                                <input type="checkbox" checked />
+                                <span>Remember this session</span>
+                            </label>
+                            <span class="login-enc-badge">🔒 End-to-End Encrypted</span>
+                        </div>
+
+                        <button type="submit" class="btn-login-submit" id="loginSubmitBtn">
+                            <span>Start Teaching</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn-quick-demo-login" id="loginQuickBtn" onclick="handleStandaloneSubmit(true)">
+                            ⚡ Quick 1-Click Launch (Teacher Mode)
+                        </button>
+                    </form>
+                </div>
+
+                <div class="login-card-footer">
+                    <div class="login-portal-shortcuts">
+                        <span>Dual-Window Hub:</span>
+                        <a href="teacher.html" target="_blank" class="shortcut-pill">👩‍🏫 Teacher Tab ↗</a>
+                        <a href="student.html" target="_blank" class="shortcut-pill">👨‍🎓 Student Tab ↗</a>
+                    </div>
+                    <div class="login-copy-row">
+                        <span>© 2026 Voxa CaptionRoom · v2.4</span>
+                        <span>Press <kbd>↵</kbd> to launch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedRole = "teacher";
+
+        function handleRoleSwitch(role) {
+            selectedRole = role;
+            const tabTeacher = document.getElementById("tabTeacher");
+            const tabStudent = document.getElementById("tabStudent");
+            const badge = document.getElementById("loginRoleBadge");
+            const heading = document.getElementById("loginHeading");
+            const subtext = document.getElementById("loginSubtext");
+            const emailInp = document.getElementById("loginEmail");
+            const submitBtn = document.getElementById("loginSubmitBtn");
+            const quickBtn = document.getElementById("loginQuickBtn");
+            const roomChip = document.getElementById("loginRoomChip");
+
+            if (tabTeacher) tabTeacher.classList.toggle("active", role === "teacher");
+            if (tabStudent) tabStudent.classList.toggle("active", role === "student");
+
+            if (role === "teacher") {
+                if (badge) {
+                    badge.innerHTML = "👩‍🏫 Educator Portal";
+                    badge.className = "login-role-tag teacher";
+                }
+                if (heading) heading.textContent = "Teacher Sign In";
+                if (subtext) subtext.textContent = "Host your classroom speech session & manage student doubts.";
+                if (emailInp) emailInp.value = "teacher@voxa.edu";
+                if (submitBtn) submitBtn.innerHTML = `<span>Start Teaching</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>`;
+                if (quickBtn) quickBtn.innerHTML = `⚡ Quick 1-Click Launch (Teacher Mode)`;
+                if (roomChip) roomChip.innerHTML = `<span class="room-dot online"></span> Room BIO-101 · Host Session`;
+            } else {
+                if (badge) {
+                    badge.innerHTML = "👨‍🎓 Student Desk";
+                    badge.className = "login-role-tag student";
+                }
+                if (heading) heading.textContent = "Student Sign In";
+                if (subtext) subtext.textContent = "Listen to live captions in your Indian dialect & ask doubts.";
+                if (emailInp) emailInp.value = "aman.student@voxa.edu";
+                if (submitBtn) submitBtn.innerHTML = `<span>Join Student Desk</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>`;
+                if (quickBtn) quickBtn.innerHTML = `⚡ Quick 1-Click Launch (Student Mode)`;
+                if (roomChip) roomChip.innerHTML = `<span class="room-dot online"></span> Room BIO-101 · Connected to Ms. Rao`;
+            }
+        }
+
+        function handleStandaloneSubmit(isQuick = false) {
+            const dest = selectedRole === "teacher" ? "teacher.html" : "student.html";
+            window.location.href = dest;
+        }
+
+        function togglePasswordVisibility() {
+            const pwd = document.getElementById("loginPassword");
+            const eye = document.getElementById("togglePwdIcon");
+            if (!pwd) return;
+            if (pwd.type === "password") {
+                pwd.type = "text";
+                if (eye) eye.textContent = "🙈";
+            } else {
+                pwd.type = "password";
+                if (eye) eye.textContent = "👁️";
+            }
+        }
+    </script>
+</body>
+
+</html>
